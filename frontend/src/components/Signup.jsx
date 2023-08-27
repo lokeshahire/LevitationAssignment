@@ -1,8 +1,4 @@
 import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
   Box,
   Button,
   FormControl,
@@ -50,7 +46,9 @@ const Signup = () => {
       className={styles.mainDiv}
       style={{ height: "400px", marginTop: "50px" }}
     >
-      <Heading>Signup</Heading>
+      <Heading style={{ fontSize: "25px", marginBottom: "20px" }}>
+        Signup
+      </Heading>
       <FormControl onSubmit={(e) => e.preventDefault()}>
         <FormLabel htmlFor="name">Full Name:</FormLabel>
 
@@ -60,6 +58,11 @@ const Signup = () => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            style={{
+              height: "30px",
+              border: "2px solid green",
+              marginLeft: "50px",
+            }}
           />
         </Box>
         <FormLabel htmlFor="email">Email:</FormLabel>
@@ -70,6 +73,11 @@ const Signup = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{
+              height: "30px",
+              border: "2px solid green",
+              marginLeft: "50px",
+            }}
           />
         </Box>
         <FormLabel htmlFor="password">Password:</FormLabel>
@@ -80,14 +88,24 @@ const Signup = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{
+              height: "30px",
+              border: "2px solid green",
+              marginLeft: "50px",
+            }}
           />
         </Box>
 
         <Button
-          style={{ cursor: "pointer" }}
           className={styles.submitbtn}
           type="submit"
           onClick={handleSignup}
+          style={{
+            backgroundColor: "green",
+            colorL: "red",
+            cursor: "pointer",
+            marginTop: "10px",
+          }}
         >
           Register
         </Button>

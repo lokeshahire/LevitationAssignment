@@ -9,7 +9,7 @@
   padding: 50px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 300px;
+  height: 400px;
 }
 
 .submitbtn {
@@ -20,8 +20,9 @@
   margin-top: 50px;
   border: none;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: large;
+  margin-bottom: 10px;
 }
 .dialogBox {
   width: 500px;

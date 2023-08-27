@@ -46,7 +46,9 @@ const Login = () => {
 
   return (
     <Box style={{ marginTop: "50px" }} className={styles.mainDiv}>
-      <Heading>Login</Heading>
+      <Heading style={{ fontSize: "25px", marginBottom: "20px" }}>
+        Login
+      </Heading>
       <FormControl onSubmit={(e) => e.preventDefault()}>
         <FormLabel htmlFor="email" style={{ marginLeft: "50px" }}>
           Email:
@@ -57,7 +59,11 @@ const Login = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{ height: "30px" }}
+            style={{
+              height: "30px",
+              border: "2px solid green",
+              marginLeft: "50px",
+            }}
           />
         </Box>
         <FormLabel
@@ -66,13 +72,18 @@ const Login = () => {
         >
           Password:
         </FormLabel>
-        <Box style={{ marginTop: "-25px" }}>
+        <Box
+          style={{
+            marginTop: "-25px",
+            marginLeft: "50px",
+          }}
+        >
           <Input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={{ height: "30px" }}
+            style={{ height: "30px", border: "2px solid green" }}
           />
         </Box>
         <Button
@@ -81,6 +92,7 @@ const Login = () => {
           className={styles.submitbtn}
           type="submit"
           onClick={handleLogin}
+          style={{ backgroundColor: "green", colorL: "red" }}
         >
           Login
         </Button>
