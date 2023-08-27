@@ -8,7 +8,7 @@ function Step2({ formData, setFormData, moveToNextStep }) {
     const files = Array.from(e.target.files);
     setFormData((prevData) => ({
       ...prevData,
-      files: [...prevData.files, ...files], // Append new files to the existing ones
+      files: [...prevData.files, ...files],
     }));
   };
 
@@ -44,11 +44,15 @@ function Step2({ formData, setFormData, moveToNextStep }) {
 
       console.log("filesFormData", filesFormData);
 
-      await axios.post("http://localhost:8080/form/upload", filesFormData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://levitationbackend.onrender.com/form/upload",
+        filesFormData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       moveToNextStep();
     } catch (error) {

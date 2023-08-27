@@ -10,12 +10,14 @@ function SubmissionTable() {
 
   useEffect(() => {
     // Fetch submissions from the server
-    axios.get("http://localhost:8080/form").then((response) => {
-      setSubmissions(response.data.data);
-      if (!searchText) {
-        setFilteredSubmissions(response.data.data);
-      }
-    });
+    axios
+      .get("https://levitationbackend.onrender.com/form")
+      .then((response) => {
+        setSubmissions(response.data.data);
+        if (!searchText) {
+          setFilteredSubmissions(response.data.data);
+        }
+      });
   }, [searchText]); // Trigger useEffect when searchText changes
 
   const handleSearch = (e) => {

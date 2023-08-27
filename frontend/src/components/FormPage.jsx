@@ -69,12 +69,14 @@ function FormPage() {
 
     const formattedData = {
       ...formData,
-      select: formData.select.join(", "), // Convert the array to a comma-separated string
+      select: formData.select.join(", "),
     };
 
     try {
-      await axios.post("http://localhost:8080/form/add", formattedData);
-      // Handle successful submission, navigation, or any other actions
+      await axios.post(
+        "https://levitationbackend.onrender.com/form/add",
+        formattedData
+      );
     } catch (error) {
       console.error("Error submitting form:", error);
     }

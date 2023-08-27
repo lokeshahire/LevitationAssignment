@@ -23,7 +23,7 @@ const Login = () => {
       password,
     };
     // console.log(payload);
-    fetch("http://localhost:8080/users/login", {
+    fetch("https://levitationbackend.onrender.com/users/login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -37,7 +37,7 @@ const Login = () => {
         } else {
           localStorage.setItem("token", res.token);
           alert("Login successful");
-
+          window.location.href = "/form";
           console.log(res);
         }
       })

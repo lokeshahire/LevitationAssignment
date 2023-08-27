@@ -25,7 +25,7 @@ const Signup = () => {
       password,
     };
     // console.log(payload);
-    fetch("http://localhost:8080/users/register", {
+    fetch("https://levitationbackend.onrender.com/users/register", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
