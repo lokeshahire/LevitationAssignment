@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { dbConnection } = require("./config/db");
 const { userRouter } = require("./routes/user.route");
+const { formRouter } = require("./routes/form.route");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter);
+app.use("/form", formRouter);
 
 app.listen(8080, async () => {
   try {
