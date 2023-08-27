@@ -6,16 +6,17 @@ const formSchema = mongoose.Schema({
   phone: Number,
   address1: String,
   address2: String,
-  City: String,
-  State: String,
-  Pincode: Number,
-  Country: String,
-  file: String,
+  city: String,
+  state: String,
+  pincode: Number,
+  country: String,
+  files: [],
   select: String,
-
+  latitude: Number,
+  longitude: Number,
   date: {
-    type: String,
-    default: new Date(),
+    type: Date,
+    default: Date.now,
   },
 });
 
