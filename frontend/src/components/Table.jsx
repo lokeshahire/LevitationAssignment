@@ -18,14 +18,14 @@ function SubmissionTable() {
           setFilteredSubmissions(response.data.data);
         }
       });
-  }, [searchText]); // Trigger useEffect when searchText changes
+  }, [searchText]);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
     setSearchText(searchTerm);
 
     if (!searchTerm) {
-      setFilteredSubmissions(submissions); // Show all submissions when search text is empty
+      setFilteredSubmissions(submissions);
     } else {
       const filtered = submissions.filter((submission) =>
         submission.name.toLowerCase().includes(searchTerm)
