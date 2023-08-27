@@ -10,12 +10,8 @@ const formSchema = mongoose.Schema({
   State: String,
   Pincode: Number,
   Country: String,
-  file: {
-    type: [Object],
-  },
-  select: {
-    type: String,
-  },
+  file: String,
+  select: String,
 
   date: {
     type: String,

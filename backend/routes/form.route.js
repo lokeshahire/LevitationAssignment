@@ -6,19 +6,15 @@ const { FormModel } = require("../model/form.model");
 
 formRouter.post("/add", async (req, res) => {
   try {
-    const data = new FormModel({
-      file: [
-        {
-          url: req.file.path,
-          imageId: req.file.filename,
-        },
-      ],
-      ...req.body,
-    });
+    const data = new FormModel(req.body);
     const createData = await data.save();
     res.status(201).json({ message: "success", data: createData });
   } catch (err) {
-    res.status(400).json({ status: "fail", message: "user info is not save" });
+    res.status(400).json({
+      status: "fail",
+      message: "user info is not save",
+      err: err.message,
+    });
   }
 });
 
